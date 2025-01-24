@@ -10,7 +10,7 @@ app.use(morgan('tiny'));
 app.use(bodyParser.json());
 
 // create new envelopes
-app.put('/u', (req, res, next) => {
+app.put('/', (req, res, next) => {
 	const user = req.body;
 	console.log(user);
 	if(user.name && user.pass){
