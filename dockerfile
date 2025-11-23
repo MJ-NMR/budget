@@ -1,12 +1,15 @@
-FROM node:16
+FROM node:latest
 
 WORKDIR /app
 
-COPY . .
 
-RUN apt-get update && apt-get install sqlite3
+#RUN apt-get update -y && apt-get install sqlite3 -y
+
+COPY package*.json ./
 
 RUN npm install
+
+COPY . .
 
 EXPOSE 8080
 
